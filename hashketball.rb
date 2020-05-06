@@ -126,4 +126,26 @@ def game_hash
   }
 end
 
-# Write code here
+def get_player_hash(name)
+  player_hash = nil
+
+
+  game_hash.each do |outer_key, outer_value|
+    outer_value.each do |middle_key, middle_value|
+      if middle_key == :players
+        middle_value.each do |ele|
+          p ele[:player_name] == name
+            p ele[:points]
+         end
+        end
+      end
+    end
+   end
+   player_hash
+end
+
+
+def num_points_scored(player)
+ score = get_player_hash(player)
+ score[:points]
+end
